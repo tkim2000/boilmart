@@ -11,7 +11,7 @@ import findStore
 import discounts
 import update
 #import pandas.io.formats.style
-
+from requests import get
 
 #from python_mysql_dbconfig import read_db_config
 from PIL import Image
@@ -53,6 +53,8 @@ def search():
 def main():
     #pandas.io.formats.excel.ExcelFormatter.header_style= None
     # Login and Signup Buttons
+    ip = get('https://api.ipify.org').content.decode('utf8')
+    print('My public IP address is: {}'.format(ip))
     col1, col2, col3, = st.columns(3)
     with col1:
             st.write(' ')
